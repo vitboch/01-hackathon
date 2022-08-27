@@ -1,5 +1,5 @@
 import { Module } from '../core/module';
-import { randomColor } from '../utils';
+import { getRandomColor, createBackgroundModuleHtml } from '../utils';
 
 export class BackgroundModule extends Module {
   constructor(type, text) {
@@ -7,30 +7,16 @@ export class BackgroundModule extends Module {
   }
 
   trigger() {
-    this.createHtml();
+    createBackgroundModuleHtml();
     const backgroundModule = document.querySelector('.background-module');
     backgroundModule.classList.add('open');
 
-    const colorBtn = document.querySelector('.background-module__btn');
-    colorBtn.addEventListener('click', this.getRandomColor);
-  }
+    const colorBtn = document.querySelector('.background-module__btn--change');
+    colorBtn.addEventListener('click', getRandomColor);
 
-  getRandomColor() {
-    const firstColor = randomColor();
-    const secondColor = randomColor();
-    document.body.style.background = `linear-gradient(${firstColor},${secondColor})`;
-  }
-
-  createHtml() {
-    const backgroundModule = document.createElement('div');
-    backgroundModule.classList.add('background-module');
-
-    const backgroundButton = document.createElement('button');
-    backgroundButton.classList.add('background-module__btn');
-    backgroundButton.textContent = 'Change background';
-    backgroundButton.type = 'button';
-
-    backgroundModule.append(backgroundButton);
-    document.body.insertAdjacentElement('beforeend', backgroundModule);
+    const closeBtn = document.querySelector('.background-module__btn--close');
+    closeBtn.addEventListener('click', () => {
+      backgroundModule.classList.remove('open');
+    });
   }
 }

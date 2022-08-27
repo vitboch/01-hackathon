@@ -16,18 +16,21 @@ export class BackgroundModule extends Module {
   }
 
   getRandomColor() {
-    const backgroundColor = randomColor();
-    document.body.style.backgroundColor = backgroundColor;
-
-    const colorName = document.querySelector('.background-module__color');
-    colorName.textContent = backgroundColor;
+    const firstColor = randomColor();
+    const secondColor = randomColor();
+    document.body.style.background = `linear-gradient(${firstColor},${secondColor})`;
   }
 
   createHtml() {
-    const backgroundHtml = `<div class="background-module">
-    <button class="background-module__btn" type="button">Сменить фон</button>
-    <p class="background-module__color"><span>Цвет в RGB</span></p>
-  </div>`;
-    document.body.insertAdjacentHTML('beforeend', backgroundHtml);
+    const backgroundModule = document.createElement('div');
+    backgroundModule.classList.add('background-module');
+
+    const backgroundButton = document.createElement('button');
+    backgroundButton.classList.add('background-module__btn');
+    backgroundButton.textContent = 'Change background';
+    backgroundButton.type = 'button';
+
+    backgroundModule.append(backgroundButton);
+    document.body.insertAdjacentElement('beforeend', backgroundModule);
   }
 }

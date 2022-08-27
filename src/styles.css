@@ -46,3 +46,26 @@ body {
     height: 100%;
     width: 100%;
 }
+
+/*click module*/
+.clicks-module__container {
+    color: black;
+    font-family: 'Khula', sans-serif;
+    text-align: center;
+}
+
+#timer {
+    margin-top: 20px;
+    font-size: 24px;
+}
+
+#score {
+    font-size: 50px;
+}
+
+.clicks-module__score {
+    margin-top: 50px;
+}
+.hidden {
+    display: none;
+}

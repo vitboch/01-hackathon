@@ -40,3 +40,9 @@ body {
 .menu .menu-item:hover {
     background: #343434;
 }
+
+/*added scope*/
+#scope {
+    height: 100%;
+    width: 100%;
+}

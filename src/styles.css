@@ -125,3 +125,32 @@ body {
     color: rgba(255, 255, 255, .5);
     box-shadow: inset 0 4px 4px rgba(0, 0, 0, .15);
 }
+
+/*board_squares*/
+.board {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+}
+
+.board__inner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    max-width: 400px;
+}
+
+.square {
+    width: 16px;
+    height: 16px;
+    background: #ccc;
+    margin: 2px;
+    box-shadow: 0 0 2px #333;
+    transition: 2s ease;
+}
+
+.square:hover {
+    transition-duration: 0s;
+}

@@ -1,19 +1,28 @@
 import { Module } from '../core/module'
-import { randomColor } from '../utils'
+import { randomColor, createModal, getScope } from '../utils'
 
 export class BoardSquaresModule extends Module {
+  #scope
+  #modal
+
   constructor(type, text) {
     super(type, text)
+    this.#scope = getScope('#scope')
+    this.#modal = createModal('squares_board-modal')
   }
 
-  trigger() {
+  #createBoard() {
+    this.#modal = createModal('squares_board-modal')
+
     const board = document.createElement('div')
     board.classList.add('board')
     const boardInner = document.createElement('div')
     boardInner.classList.add('board__inner')
 
     board.insertAdjacentElement('beforeend', boardInner)
-    document.body.insertAdjacentElement('beforeend', board)
+    this.#modal.append(board)
+    this.#scope.append(this.#modal)
+    this.#modal.style.background = 'inherit'
 
     const squaresNumber = 500
 
@@ -27,7 +36,6 @@ export class BoardSquaresModule extends Module {
 
     function setColor(element) {
       const color = randomColor()
-      console.log(color)
       element.style.background = color
       element.style.boxShadow = `0 0 2px ${color}, 0 0 10px ${color}`
     }
@@ -36,5 +44,12 @@ export class BoardSquaresModule extends Module {
       element.style.background = '#1d1d1d'
       element.style.boxShadow = `0 0 2px #000`
     }
+  }
+
+  trigger() {
+    if (getScope('#squares_board-modal')) return
+
+    this.#createBoard()
+    this.#scope.append(this.#modal)
   }
 }

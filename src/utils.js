@@ -106,3 +106,16 @@ export function drawShape() {
       break
   }
 }
+
+// Predict the future
+
+export function createPredictDiv(text) {
+  const scopeHtml = document.querySelector('#scope')
+  const predictDiv = document.createElement('div')
+  predictDiv.id = 'predict_div'
+  predictDiv.className = 'predict_div'
+  predictDiv.textContent = text
+  scopeHtml.append(predictDiv)
+
+  return predictDiv
+}

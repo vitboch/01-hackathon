@@ -4,11 +4,13 @@ import {ContextMenu} from '@/menu'
 import {BackgroundModule} from '@/modules/background.module'
 import {ClicksModule} from '@/modules/clicks.module'
 import {ShapeModule} from '@/modules/shape.module'
+import {PredictModule} from '@/modules/predict.module'
 
 const contextMenu = new ContextMenu('.menu')
 const backgroundModule = new BackgroundModule('#', 'Background module')
 const clicksModule = new ClicksModule('#', 'Clicks module')
 const shapeModule = new ShapeModule('#', 'Shape module')
+const predictModule = new PredictModule('#', 'Predict the future')
 
 createScope()
 const scope = document.querySelector('#scope')
@@ -18,3 +20,4 @@ document.body.addEventListener('click', e => contextMenu.close(e))
 contextMenu.add(backgroundModule)
 contextMenu.add(clicksModule)
 contextMenu.add(shapeModule)
+contextMenu.add(predictModule)

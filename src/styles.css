@@ -56,3 +56,11 @@ body {
 .canvas.open {
   display: block;
 }
+
+.predict_div {
+  display: none;
+}
+
+.predict_div.open {
+  display: block;
+}

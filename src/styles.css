@@ -46,3 +46,40 @@ body {
     height: 100%;
     width: 100%;
 }
+
+/*modal*/
+.modal {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: #ccc;
+    padding: 25px;
+    margin: auto;
+    width: 50%;
+    text-align: center;
+    border-radius: 2px;
+    position: relative;
+    color: #333
+}
+
+.modal span {
+    color: white;
+}
+
+.modal_close-button {
+    cursor: pointer;
+    display: block;
+    position: absolute;
+    right: -15px;
+    top: -20px;
+    font-size: 20px;
+    font-weight: 700;
+    border-style: none;
+    background: none;
+}
+
+.modal.quote {
+    width: 55%;
+    margin: 5% 35%;
+}

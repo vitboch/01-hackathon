@@ -1,7 +1,5 @@
 import { Module } from '../core/module'
-import { createCanvas } from '../utils'
-import { drawShape } from '../utils'
-import { removeElement } from '../utils'
+import { createCanvas, drawShape, removeElement } from '../utils'
 
 export class ShapeModule extends Module {
   constructor(type, text) {

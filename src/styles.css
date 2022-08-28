@@ -12,6 +12,9 @@ body {
     height: 100vh;
     width: 100%;
     padding: 2rem;
+    background-image: url('https://cdn-icons-png.flaticon.com/128/3645/3645851.png');
+    background-repeat: no-repeat;
+    background-position: right;
 }
 
 .menu {
@@ -39,4 +42,184 @@ body {
 
 .menu .menu-item:hover {
     background: #343434;
+}
+
+/*added scope*/
+#scope {
+    height: 100%;
+    width: 100%;
+}
+
+.canvas {
+    width: 100%;
+    height: 100%;
+    display: none;
+}
+
+.canvas.open {
+    display: block;
+}
+
+.predict_div {
+    display: none;
+}
+
+.predict_div.open {
+    display: block;
+}
+
+/*modal*/
+.modal {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: #0556bdd6;
+    padding: 25px;
+    margin: auto;
+    width: 50%;
+    text-align: center;
+    border-radius: 2px;
+    position: relative;
+    color: #fff;
+}
+
+.modal span {
+    color: white;
+}
+
+.modal_close-button {
+    cursor: pointer;
+    display: block;
+    position: absolute;
+    right: -15px;
+    top: -20px;
+    font-size: 20px;
+    font-weight: 700;
+    border-style: none;
+    background: none;
+}
+
+.modal.quote {
+    width: 55%;
+    margin: 5% 35%;
+}
+
+/*background module*/
+.background-module {
+    width: 180px;
+    padding: 20px;
+    position: absolute;
+    top: 15%;
+    right: 0;
+    transform: translate(-50%, -50%);
+    flex-direction: column;
+    align-items: center;
+    display: none;
+}
+
+.background-module.open {
+    display: flex;
+}
+
+.background-module__btn {
+    width: 180px;
+    margin-bottom: 20px;
+    padding: 10px;
+    border: 1px solid transparent;
+    border-radius: 6px;
+    outline: transparent;
+    background-color: rgb(229, 228, 226);
+    cursor: pointer;
+    transition: all .2s ease-in;
+}
+
+.background-module__btn:hover {
+    background-color: rgb(208, 208, 208);
+}
+
+.background-module__btn:focus {
+    box-shadow: 0 0 0 3px rgba(0, 0, 0, .25);
+}
+
+.background-module__btn:active {
+    color: rgba(255, 255, 255, .5);
+    box-shadow: inset 0 4px 4px rgba(0, 0, 0, .15);
+}
+
+.shape_close-button {
+    width: 100px;
+    height: 30px;
+}
+
+/*board squares*/
+.board {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+}
+
+.board__inner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    max-width: 400px;
+}
+
+.square {
+    width: 16px;
+    height: 16px;
+    background: #ccc;
+    margin: 2px;
+    box-shadow: 0 0 2px #333;
+    transition: 2s ease;
+}
+
+.square:hover {
+    transition-duration: .1s;
+}
+
+.prediction {
+    background: #0556bdd6;
+    color: white;
+}
+
+.cristal_ball-img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/*click module*/
+.clicks-module__container {
+    font-family: 'Khula', sans-serif;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    width: auto;
+    height: 100%;
+    border-radius: 3rem;
+    box-shadow: 0 5px 18px 4px rgba(34, 60, 80, .2);
+    padding: 4rem;
+}
+
+#timer {
+    margin-top: 20px;
+    font-size: 24px;
+}
+
+#score {
+    font-size: 60px;
+}
+
+.clicks-module__score {
+    margin-top: 50px;
+    flex-direction: column;
+    align-items: center;
+}
+
+.hidden {
+    display: none;
 }

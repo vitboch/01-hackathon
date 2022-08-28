@@ -1,5 +1,11 @@
 import { Module } from '../core/module'
-import { createCanvas, drawShape, removeElement } from '../utils'
+import {
+  createCanvas,
+  drawShape,
+  removeElement,
+  createModal,
+  getScope,
+} from '../utils'
 
 export class ShapeModule extends Module {
   constructor(type, text) {
@@ -7,7 +13,7 @@ export class ShapeModule extends Module {
   }
 
   trigger() {
-    removeElement('canvas')
+    removeElement('#shape_module-div')
     const canvas = createCanvas()
     canvas.classList.add('open')
     drawShape()

@@ -102,10 +102,25 @@ export function drawCircle() {
 
 export function createCanvas() {
   const scopeHtml = document.querySelector('#scope')
+
+  const shapeModule = document.createElement('div')
+  shapeModule.id = 'shape_module-div'
+
   const canvas = document.createElement('canvas')
   canvas.id = 'canvas'
   canvas.className = 'canvas'
-  scopeHtml.append(canvas)
+
+  const shapeCloseButton = document.createElement('button')
+  shapeCloseButton.className = 'shape_close-button'
+  shapeCloseButton.textContent = 'Close shape'
+
+  shapeCloseButton.addEventListener('click', () => {
+    const shapeModule = document.querySelector(`#shape_module-div`)
+    shapeModule.remove()
+  })
+
+  shapeModule.append(shapeCloseButton, canvas)
+  scopeHtml.append(shapeModule)
 
   return canvas
 }

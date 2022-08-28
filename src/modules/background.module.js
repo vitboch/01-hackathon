@@ -1,5 +1,9 @@
 import { Module } from '../core/module'
-import { getRandomColor, createBackgroundModuleHtml } from '../utils'
+import {
+  getRandomColor,
+  createBackgroundModuleHtml,
+  cleanScope,
+} from '../utils'
 
 export class BackgroundModule extends Module {
   constructor(type, text) {
@@ -7,7 +11,7 @@ export class BackgroundModule extends Module {
   }
 
   trigger() {
-    document.body.children[1].innerHTML = ''
+    cleanScope()
     createBackgroundModuleHtml()
     const backgroundModule = document.querySelector('.background-module')
     backgroundModule.classList.add('open')

@@ -1,5 +1,5 @@
 import { Module } from '../core/module'
-import { randomColor, createModal, getScope } from '../utils'
+import { randomColor, createModal, getScope, cleanScope } from '../utils'
 
 export class BoardSquaresModule extends Module {
   #scope
@@ -47,8 +47,7 @@ export class BoardSquaresModule extends Module {
   }
 
   trigger() {
-    document.body.children[1].innerHTML = ''
-    if (getScope('#squares_board-modal')) return
+    cleanScope()
 
     this.#createBoard()
     this.#scope.append(this.#modal)

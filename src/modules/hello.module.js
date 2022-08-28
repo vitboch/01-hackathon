@@ -1,5 +1,5 @@
 import { Module } from '../core/module'
-import { createModal, getScope } from '../utils'
+import { createModal, getScope, cleanScope } from '../utils'
 
 export default class HelloModule extends Module {
   #scope
@@ -23,8 +23,7 @@ export default class HelloModule extends Module {
   }
 
   trigger() {
-    document.body.children[1].innerHTML = ''
-    if (getScope('#hello-modal')) return
+    cleanScope()
 
     this.#sayHello()
     this.#scope.append(this.#modal)

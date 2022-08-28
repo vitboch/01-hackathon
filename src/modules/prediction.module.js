@@ -1,10 +1,5 @@
 import { Module } from '../core/module'
-import {
-  createModal,
-  getScope,
-  random,
-  createGif
-} from '../utils'
+import { createModal, getScope, random, createGif, cleanScope } from '../utils'
 import { predictions } from '../data/predictions'
 
 export class PredictionModule extends Module {
@@ -34,12 +29,9 @@ export class PredictionModule extends Module {
   }
 
   trigger() {
-    document.body.children[1].innerHTML = ''
-    if (getScope('#prediction-modal')) return
+    cleanScope()
 
     this.#showPrediction()
     this.#scope.append(this.#modal)
   }
 }
-
-

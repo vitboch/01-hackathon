@@ -1,10 +1,12 @@
 import './styles.css'
 import { createScope } from '@/utils'
-import { ContextMenu } from '@/menu'
-import { BackgroundModule } from '@/modules/background.module'
-import { ClicksModule } from '@/modules/clicks.module'
-import { ShapeModule } from '@/modules/shape.module'
-import { PredictionModule } from '@/modules/prediction.module'
+import ContextMenu from '@/menu'
+import BackgroundModule from '@/modules/background.module'
+import ClicksModule from '@/modules/clicks.module'
+import ShapeModule from '@/modules/shape.module'
+import PredictionModule from '@/modules/prediction.module'
+import HelloModule from '@/modules/hello.module'
+
 
 const contextMenu = new ContextMenu('.menu')
 const backgroundModule = new BackgroundModule('background', 'Background module')
@@ -20,7 +22,6 @@ contextMenu.add(backgroundModule)
 contextMenu.add(clicksModule)
 contextMenu.add(shapeModule)
 
-import HelloModule from '@/modules/hello.module'
 
 const helloModule = new HelloModule('helloModule', 'Hello module')
 contextMenu.add(helloModule)

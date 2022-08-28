@@ -1,7 +1,7 @@
-import {Module} from '../core/module'
-import {ModuleClickHTML, moduleClick} from '../utils'
+import {Module} from '@/core/module'
+import {ModuleClickHTML, moduleClick} from '@/utils'
 
-export class ClicksModule extends Module {
+export default class ClicksModule extends Module {
     constructor(type, text) {
         super(type, text)
     }

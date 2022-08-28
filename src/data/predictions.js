@@ -62,4 +62,4 @@ export const predictions = [
     'From now on, you will continue to get prettier and younger.',
     'Your luck, celebrating, stock up on more tea.',
     'Do yoga and your body will thank you.'
-  ]
+]

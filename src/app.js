@@ -7,7 +7,7 @@ import { ShapeModule } from '@/modules/shape.module'
 import { PredictionModule } from '@/modules/prediction.module'
 
 const contextMenu = new ContextMenu('.menu')
-const backgroundModule = new BackgroundModule('#', 'Background module')
+const backgroundModule = new BackgroundModule('background', 'Background module')
 const clicksModule = new ClicksModule('#', 'Clicks module')
 const shapeModule = new ShapeModule('#', 'Shape module')
 

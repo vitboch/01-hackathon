@@ -18,3 +18,11 @@ document.body.addEventListener('click', e => contextMenu.close(e))
 contextMenu.add(backgroundModule)
 contextMenu.add(clicksModule)
 contextMenu.add(shapeModule)
+
+
+import HelloModule from '@/modules/hello.module'
+
+const helloModule = new HelloModule('helloModule', 'Hello module')
+contextMenu.add(helloModule)
+
+

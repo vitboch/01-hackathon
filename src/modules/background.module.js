@@ -19,16 +19,5 @@ export class BackgroundModule extends Module {
       backgroundModule.remove()
       document.body.style.background = 'inherit'
     })
-
-    const contextMenu = document.querySelector('.menu')
-    contextMenu.addEventListener('click', event => {
-      const menuBackgroundItem = document.querySelector(
-        '[data-type="background"]',
-      )
-      if (event.target !== menuBackgroundItem) {
-        backgroundModule.style.top = '15%'
-        backgroundModule.style.left = '10%'
-      }
-    })
   }
 }

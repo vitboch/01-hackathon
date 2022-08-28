@@ -4,6 +4,7 @@ import { ContextMenu } from '@/menu'
 import { BackgroundModule } from '@/modules/background.module'
 import { ClicksModule } from '@/modules/clicks.module'
 import { ShapeModule } from '@/modules/shape.module'
+import { PredictionModule } from '@/modules/prediction.module'
 
 const contextMenu = new ContextMenu('.menu')
 const backgroundModule = new BackgroundModule('#', 'Background module')
@@ -28,3 +29,6 @@ import { BoardSquaresModule } from '@/modules/board_squares.module'
 
 const boardSquaresModule = new BoardSquaresModule('#', 'Squares board')
 contextMenu.add(boardSquaresModule)
+
+const predictionModule = new PredictionModule('#', 'Prediction module')
+contextMenu.add(predictionModule)

@@ -177,3 +177,14 @@ body {
 .square:hover {
   transition-duration: 0s;
 }
+
+.prediction {
+  background: #0556bdd6;
+  color: white;
+}
+
+.cristal_ball-img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}

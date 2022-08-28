@@ -171,3 +171,15 @@ export function createBackgroundModuleHtml() {
   backgroundModule.append(backgroundButton, backgroundCloseButton)
   document.body.insertAdjacentElement('beforeend', backgroundModule)
 }
+
+export function createGif(url) {
+  const imgHtml = document.createElement('img')
+  imgHtml.id = 'crystal_ball'
+  imgHtml.src = url
+  imgHtml.alt = 'Crystal Ball'
+  imgHtml.className = 'cristal_ball-img'
+  return imgHtml
+}
+
+
+

@@ -21,9 +21,14 @@ export class BackgroundModule extends Module {
     })
 
     const contextMenu = document.querySelector('.menu')
-    contextMenu.addEventListener('click', () => {
-      backgroundModule.style.top = '15%'
-      backgroundModule.style.left = '10%'
+    contextMenu.addEventListener('click', event => {
+      const menuBackgroundItem = document.querySelector(
+        '[data-type="background"]',
+      )
+      if (event.target !== menuBackgroundItem) {
+        backgroundModule.style.top = '15%'
+        backgroundModule.style.left = '10%'
+      }
     })
   }
 }

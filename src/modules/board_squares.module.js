@@ -47,6 +47,7 @@ export class BoardSquaresModule extends Module {
   }
 
   trigger() {
+    document.body.children[1].innerHTML = ''
     if (getScope('#squares_board-modal')) return
 
     this.#createBoard()

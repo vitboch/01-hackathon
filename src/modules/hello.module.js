@@ -23,6 +23,7 @@ export default class HelloModule extends Module {
   }
 
   trigger() {
+    document.body.children[1].innerHTML = ''
     if (getScope('#hello-modal')) return
 
     this.#sayHello()

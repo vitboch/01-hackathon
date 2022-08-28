@@ -169,7 +169,7 @@ export function createBackgroundModuleHtml() {
   backgroundCloseButton.type = 'button'
 
   backgroundModule.append(backgroundButton, backgroundCloseButton)
-  document.body.insertAdjacentElement('beforeend', backgroundModule)
+  document.body.children[1].insertAdjacentElement('beforeend', backgroundModule)
 }
 
 export function createGif(url) {
@@ -181,5 +181,67 @@ export function createGif(url) {
   return imgHtml
 }
 
+// click module
+export function moduleClick() {
+    const timeEl = document.getElementById('timer')
+    const scoreHTML = document.querySelector('.clicks-module__score')
+    const infoScore = document.getElementById('score')
 
+    let time = 3
+    let score = 0
+    timeEl.textContent = time + ' sec.'
+    const timer = setInterval(function () {
+        time = --time
+        if (time <= 0) {
+            clearInterval(timer)
+            infoScore.textContent = score
+            scoreHTML.classList = 'clicks-module__score'
+            if (score <= 7) {
+                resultText('could have been better')
+            } else if (score <= 15) {
+                resultText('you are doing well')
+            } else if (score <= 28) {
+                resultText('is the button still intact?')
+            } else if (score = 35) {
+                resultText('Can you already stop doing nonsense and start working?')
+            }
+        }
 
+        timeEl.textContent = time + ' sec.'
+    }, 1000)
+
+    window.addEventListener('mousedown', (event) => {
+        event.preventDefault()
+        if (time > 0) {
+            score++
+            console.log('click', score)
+        }
+    })
+}
+
+export function ModuleClickHTML(parent) {
+    const container =
+        `<div class="clicks-module__container">
+                        <div class="clicks-module">
+                            <h1 class="clicks-module__title">Кликай быстрей, осталось:</h1>
+                        </div>
+                        <div
+                            <span id="timer">сек.</span>
+                        </div>
+                        <div class="clicks-module__score hidden">
+                            <h3>Ваш счет:</h3>
+                            <span id="score"></span>
+                        </div>
+                        <div class="clicks-module__text hidden">
+                            <p></p>
+                        </div>
+                    </div>`
+
+    parent.insertAdjacentHTML("afterbegin", container)
+}
+
+function resultText(text) {
+  const resultTextHTML = document.querySelector('.clicks-module__text')
+  resultTextHTML.classList = 'clicks-module__text'
+  resultTextHTML.textContent = text
+}

@@ -34,6 +34,7 @@ export class PredictionModule extends Module {
   }
 
   trigger() {
+    document.body.children[1].innerHTML = ''
     if (getScope('#prediction-modal')) return
 
     this.#showPrediction()

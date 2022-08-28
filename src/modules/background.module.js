@@ -7,6 +7,7 @@ export class BackgroundModule extends Module {
   }
 
   trigger() {
+    document.body.children[1].innerHTML = ''
     createBackgroundModuleHtml()
     const backgroundModule = document.querySelector('.background-module')
     backgroundModule.classList.add('open')

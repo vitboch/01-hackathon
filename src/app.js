@@ -23,3 +23,8 @@ import HelloModule from '@/modules/hello.module'
 
 const helloModule = new HelloModule('helloModule', 'Hello module')
 contextMenu.add(helloModule)
+
+import { BoardSquaresModule } from '@/modules/board_squares.module'
+
+const boardSquaresModule = new BoardSquaresModule('#', 'Squares board')
+contextMenu.add(boardSquaresModule)

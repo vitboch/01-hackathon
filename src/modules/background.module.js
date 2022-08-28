@@ -17,6 +17,7 @@ export class BackgroundModule extends Module {
     const closeBtn = document.querySelector('.background-module__btn--close');
     closeBtn.addEventListener('click', () => {
       backgroundModule.remove();
+      document.body.style.background = 'inherit';
     });
   }
 }

@@ -145,9 +145,9 @@ body {
 .square {
     width: 16px;
     height: 16px;
-    background: #1d1d1d;
+    background: #ccc;
     margin: 2px;
-    box-shadow: 0 0 2px #000;
+    box-shadow: 0 0 2px #333;
     transition: 2s ease;
 }
 

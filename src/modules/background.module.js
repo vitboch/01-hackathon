@@ -16,7 +16,7 @@ export class BackgroundModule extends Module {
 
     const closeBtn = document.querySelector('.background-module__btn--close');
     closeBtn.addEventListener('click', () => {
-      backgroundModule.classList.remove('open');
+      backgroundModule.remove();
     });
   }
 }
